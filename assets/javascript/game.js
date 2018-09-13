@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    //debugger;
     
     var slinger1 = {
         alreadyPicked: false,
@@ -10,6 +9,7 @@ $(document).ready(function(){
         baseHealth: 50,
         numOfAttacks: 0,
         order: '',
+        pickClass: '',
         
     };
     
@@ -22,6 +22,7 @@ $(document).ready(function(){
         baseHealth: 50,
         numOfAttacks: 0,
         order: '',
+        pickClass: '',
     };
     
     var slinger3 = {
@@ -33,6 +34,7 @@ $(document).ready(function(){
         baseHealth: 50,
         numOfAttacks: 0,
         order: '',
+        pickClass: '',
     };
     
     var slinger4 = {
@@ -44,6 +46,7 @@ $(document).ready(function(){
         baseHealth: 50,
         numOfAttacks: 0,
         order: '',
+        pickClass: '',
     };
 
     var opponentPicked = true;
@@ -65,9 +68,10 @@ $(document).ready(function(){
 
     
     $('#slinger1').on('click',function() {
-        if (!slinger1.alreadyPicked && !slinger2.alreadyPicked && !slinger3.alreadyPicked){        
+        if (!slinger1.alreadyPicked && !slinger2.alreadyPicked && !slinger3.alreadyPicked && !slinger4.alreadyPicked){        
             $('#slinger1').empty();
             $('#slinger1').append('Away to Duel!!')
+            slinger1.pickClass = $('#slinger1')
             $('#player').append(paragraph1);
             paragraph1.addClass('goodGuyStats')
             paragraph1.empty()
@@ -84,6 +88,7 @@ $(document).ready(function(){
         }
         else {
             $('#computer').text('')
+            slinger1.pickClass = $('#slinger1')
             var computerOne = slinger1;
             $('#computer').append(paragraph2);
             paragraph2.addClass('badGuyStats')
@@ -107,6 +112,7 @@ $(document).ready(function(){
         if (!slinger1.alreadyPicked && !slinger2.alreadyPicked && !slinger3.alreadyPicked && !slinger4.alreadyPicked){        
             $('#slinger2').empty();
             $('#slinger2').append('Away to Duel!!')
+            slinger2.pickClass = $('#slinger2')
             $('#player').append(paragraph3);
             paragraph3.addClass('goodGuyStats')
             paragraph3.empty()
@@ -123,6 +129,7 @@ $(document).ready(function(){
         }
         else {
             $('#computer').text('')
+            slinger2.pickClass = $('#slinger2')
             var computerOne = slinger2;
             $('#computer').append(paragraph4);
             paragraph4.addClass('badGuyStats')
@@ -146,6 +153,7 @@ $(document).ready(function(){
         if (!slinger1.alreadyPicked && !slinger2.alreadyPicked && !slinger3.alreadyPicked && !slinger4.alreadyPicked){        
             $('#slinger3').empty();
             $('#slinger3').append('Away to Duel!!')
+            slinger3.pickClass = $('#slinger3')
             $('#player').append(paragraph5);
             paragraph5.addClass('goodGuyStats')
             paragraph5.empty()
@@ -162,6 +170,7 @@ $(document).ready(function(){
         }
         else {
             $('#computer').text('')
+            slinger3.pickClass = $('#slinger3')
             var computerOne = slinger3;
             $('#computer').append(paragraph6);
             paragraph6.addClass('badGuyStats')
@@ -185,6 +194,7 @@ $(document).ready(function(){
             if (!slinger1.alreadyPicked && !slinger2.alreadyPicked && !slinger3.alreadyPicked && !slinger4.alreadyPicked){        
                 $('#slinger4').empty();
                 $('#slinger4').append('Away to Duel!!')
+                slinger4.pickClass = $('#slinger4')
                 $('#player').append(paragraph7);
                 paragraph7.addClass('goodGuyStats')
                 paragraph7.empty()
@@ -201,6 +211,7 @@ $(document).ready(function(){
             }
             else {
                 $('#computer').text('')
+                slinger4.pickClass = $('#slinger4')
                 var computerOne = slinger4;
                 $('#computer').append(paragraph8);
                 paragraph8.addClass('badGuyStats')
@@ -228,7 +239,6 @@ $(document).ready(function(){
     
     
     player.on('click',function() {
-        debugger;
         if (!opponentPicked){
             switch('mainPlayer'){
                 case slinger1.order:
@@ -285,6 +295,11 @@ $(document).ready(function(){
                 paragraphComp.empty()
                 paragraphMain.empty()
                 $('#computer').text('DEAD!')
+                computerOne.pickClass.text('DECEASED!')
+                if (slinger1.alreadyPicked === true && slinger2.alreadyPicked === true && slinger3.alreadyPicked === true && slinger4.alreadyPicked === true){
+                    playerOne.pickClass.text('')
+                    playerOne.pickClass.text('WINNER!!!')
+                }
                 computerOne.alreadyPicked = true;
                 computerOne.order = '';
             }
@@ -293,6 +308,7 @@ $(document).ready(function(){
                 paragraphMain.empty()
                 paragraphComp.empty()
                 $('#player').text('DEAD!')
+                playerOne.pickClass.text('DECEASED!')
                 playerOne.alreadyPicked = true;
             }
         }

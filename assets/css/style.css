@@ -54,8 +54,11 @@
 .notes{
     width: 125px;
     text-align: center;
-    color: white;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
     margin: 0%;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .goodGuy{
