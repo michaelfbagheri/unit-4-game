@@ -65,9 +65,10 @@
     background-repeat:   no-repeat;
     background-size:     cover;
     margin: 5px;
-    position: absolute;
     left: 10px;
     top: 10px;
+    float: left;
+    position: fixed;
 }
 
 .badGuy{
@@ -77,9 +78,10 @@
     background-repeat:   no-repeat;
     background-size:     cover;
     margin: 5px;
-    position: absolute;
     right: 10px;
     top: 10px;
+    float: right;
+    position: fixed;
 }
 
 .fightZone{
@@ -87,9 +89,33 @@
 
 }
 
-.test{
-    width:  125px;
-    position: absolute;
-    top: 120px;
+.fightZoneStats{
+    position: relative;
+}
 
+.goodGuyStats{
+    width:  125px;
+    height: 50px;
+    margin: 5px;
+    position: fixed;
+    top: 126px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+
+}
+
+.badGuyStats{
+    width:  125px;
+    height: 50px;
+    margin: 5px;
+    position: fixed;
+    top: 126px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+   
+}
+
+#wrapper{
+    float: left;
+    height: 1px;
 }
