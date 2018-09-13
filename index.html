@@ -23,23 +23,7 @@
 
 </head>
 
-<style>
-    .size {
-        width: 50px;
-        height: 50px;
-        background-color: black;
-    }
 
-    .btnsize {
-        width: 100px;
-        height: 50px;
-
-    }
-
-    .border {
-        border: 1px solid black;
-    }
-</style>
 
 <body>
     <nav class="nav justify-content-center|justify-content-end">
@@ -47,26 +31,43 @@
       <a class="nav-link" href="#">Link</a>
       <a class="nav-link disabled" href="#">Disabled link</a>
     </nav>
-<div class="container border">
-    <div class="row border">
-        <div class="col-lg-4 border" id='pres1'>    
+<div class="container border fightZone">
+
+        <div class="fightZone">
+            <div class="goodGuy" id="player"></div>
+            
+            <div class="badGuy" id="computer"></div>            
+
         </div>
-        
-        <div class="col-lg-4 border" id='pres2'>    
+
+        <div class=" row picturePosition"> 
+
+            <div>
+            <div class="img" id="slinger1" style="background-image:url('assets/image/BillyTheKid150X125.jpg');"></div>
+            <p class="notes">Billy The Kid</p>
+            <p class="notes">Life 50</p>
+            </div>
+
+            <div>
+            <div class="img" id="slinger2" style="background-image:url('assets/image/PearlHeart.jpg');"></div>
+            <p class="notes">Pearl Heart</p>
+            </div>
+
+            <div>
+            <div class="img" id="slinger3" style="background-image:url('assets/image/DocHolliday.jpg');"></div>
+            <p class="notes">Doc Holliday</p>
+            </div>
+
+            <div>
+            <div class="img" id="slinger4" style="background-image:url('assets/image/WyattEarp150X125.png');"></div>
+            <p class="notes">Wyatt Earp</p>
+            </div>
+         
+
         </div>
-        
-        <div class="col-lg-4 border" id='pres3'>    
-        </div>
-    </div>
     
-    <div class="row border">
-            <div class="col-lg-6 border" id='player'>    
-            </div>
-            
-            <div class="col-lg-6 border" id='computer'>    
-            </div>
-            
-    </div>
+    
+  
 
 </div>
 

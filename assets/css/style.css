@@ -1,0 +1,95 @@
+.size {
+    width: 50px;
+    height: 50px;
+    background-color: black;
+}
+
+.btnsize {
+    width: 100px;
+    height: 50px;
+
+}
+
+
+
+.container {
+    width: 960px;
+    position: relative;
+    background-image: url(../image/utah-resized-withgun.jpg);
+    -webkit-filter: drop-shadow(2px 2px 20px black);
+    height: 600px;
+
+
+}
+
+
+
+
+.img {
+    position: relative;
+    float: left;
+    width:  125px;
+    height: 125px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+    margin: 5px;
+    border: black 3px solid;
+    -webkit-text-stroke: 1px #f0ec08;
+    -webkit-filter: drop-shadow(2px 2px 20px gold);
+
+
+}
+
+.fighterpic1{
+    width: 100px;
+    height: 100px;
+}
+
+.picturePosition{
+    position: absolute;
+    bottom: 10px;
+ 
+}
+.notes{
+    width: 125px;
+    text-align: center;
+    color: white;
+    margin: 0%;
+}
+
+.goodGuy{
+    width:  125px;
+    height: 125px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+    margin: 5px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.badGuy{
+    width:  125px;
+    height: 125px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+    margin: 5px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.fightZone{
+    position: relative;
+
+}
+
+.test{
+    width:  125px;
+    position: absolute;
+    top: 120px;
+
+}
