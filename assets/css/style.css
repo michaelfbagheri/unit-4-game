@@ -86,6 +86,7 @@
 
 .fightZone{
     position: relative;
+    top: 10px;
 
 }
 
@@ -118,4 +119,15 @@
 #wrapper{
     float: left;
     height: 1px;
+}
+.background{
+    background-color: black;
+}
+
+.title{
+    font-size: 80px;
+    -webkit-text-stroke: 1px #f0ec08;
+    -webkit-filter: drop-shadow(2px 2px 20px gold);
+    text-align: center;
+
 }

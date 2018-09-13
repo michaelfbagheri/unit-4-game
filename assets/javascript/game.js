@@ -62,14 +62,10 @@ $(document).ready(function(){
     var newImgComputer = $('<img>')
     var newDiv = $('<div>')
     
-    //$('#slinger1').append(slinger1.name)
-    //$('#slinger2').append(slinger2.name)
-    //$('#slinger3').append(slinger3.name)
-    
+
     
     $('#slinger1').on('click',function() {
         if (!slinger1.alreadyPicked && !slinger2.alreadyPicked && !slinger3.alreadyPicked){        
-            //player.text(slinger1.name)
             $('#slinger1').empty();
             $('#slinger1').append('Away to Duel!!')
             $('#player').append(paragraph1);
@@ -87,8 +83,8 @@ $(document).ready(function(){
             $('.goodGuy').css({"border":"black 3px solid", "-webkit-text-stroke": "1px #f0ec08","-webkit-filter": "drop-shadow(2px 2px 20px gold)"})
         }
         else {
+            $('#computer').text('')
             var computerOne = slinger1;
-            //computer.text(computerOne.name)
             $('#computer').append(paragraph2);
             paragraph2.addClass('badGuyStats')
             paragraph2.empty()
@@ -97,8 +93,6 @@ $(document).ready(function(){
             paragraph2.append("CounterAttack: " + slinger1.counterAttackPower)
             paragraph2.append("\n")
             paragraph2.append("BaseHealth: " + slinger1.baseHealth)
-            //paragraph2.attr('Id','computerBaseHealth');
-            //$('#computerBaseHealth').text('Base health: ' + computerOne.baseHealth);
             $('#slinger1').off('click');
             slinger1.alreadyPicked = true;
             opponentPicked = false;
@@ -111,7 +105,6 @@ $(document).ready(function(){
     
     $('#slinger2').on('click',function() {
         if (!slinger1.alreadyPicked && !slinger2.alreadyPicked && !slinger3.alreadyPicked && !slinger4.alreadyPicked){        
-            //player.text(slinger2.name)
             $('#slinger2').empty();
             $('#slinger2').append('Away to Duel!!')
             $('#player').append(paragraph3);
@@ -129,8 +122,8 @@ $(document).ready(function(){
             $('.goodGuy').css({"border":"black 3px solid", "-webkit-text-stroke": "1px #f0ec08","-webkit-filter": "drop-shadow(2px 2px 20px gold)"})
         }
         else {
+            $('#computer').text('')
             var computerOne = slinger2;
-            //computer.text(computerOne.name)
             $('#computer').append(paragraph4);
             paragraph4.addClass('badGuyStats')
             paragraph4.empty()
@@ -139,8 +132,6 @@ $(document).ready(function(){
             paragraph4.append("CounterAttack: " + slinger2.counterAttackPower)
             paragraph4.append("\n")
             paragraph4.append('BaseHealth: ' + slinger2.baseHealth)
-            //paragraph2.attr('Id','computerBaseHealth');
-            //$('#computerBaseHealth').text('Base health: ' + computerOne.baseHealth);
             $('#slinger2').off('click');
             slinger2.alreadyPicked = true;
             opponentPicked = false;
@@ -153,7 +144,6 @@ $(document).ready(function(){
     
     $('#slinger3').on('click',function() {
         if (!slinger1.alreadyPicked && !slinger2.alreadyPicked && !slinger3.alreadyPicked && !slinger4.alreadyPicked){        
-            //player.text(slinger3.name)
             $('#slinger3').empty();
             $('#slinger3').append('Away to Duel!!')
             $('#player').append(paragraph5);
@@ -171,8 +161,8 @@ $(document).ready(function(){
             $('.goodGuy').css({"border":"black 3px solid", "-webkit-text-stroke": "1px #f0ec08","-webkit-filter": "drop-shadow(2px 2px 20px gold)"})
         }
         else {
+            $('#computer').text('')
             var computerOne = slinger3;
-            //computer.text(computerOne.name)
             $('#computer').append(paragraph6);
             paragraph6.addClass('badGuyStats')
             paragraph6.empty()
@@ -181,8 +171,6 @@ $(document).ready(function(){
             paragraph6.append('CounterAttack: ' + slinger3.counterAttackPower)
             paragraph6.append("\n")
             paragraph6.append('BaseHealth: ' + slinger3.baseHealth)
-            //paragraph2.attr('Id','computerBaseHealth');
-            //$('#computerBaseHealth').text('Base health: ' + computerOne.baseHealth);
             $('#slinger3').off('click');
             slinger3.alreadyPicked = true;
             opponentPicked = false;
@@ -195,7 +183,6 @@ $(document).ready(function(){
 
         $('#slinger4').on('click',function() {
             if (!slinger1.alreadyPicked && !slinger2.alreadyPicked && !slinger3.alreadyPicked && !slinger4.alreadyPicked){        
-                //player.text(slinger4.name)
                 $('#slinger4').empty();
                 $('#slinger4').append('Away to Duel!!')
                 $('#player').append(paragraph7);
@@ -213,8 +200,8 @@ $(document).ready(function(){
                 $('.goodGuy').css({"border":"black 3px solid", "-webkit-text-stroke": "1px #f0ec08","-webkit-filter": "drop-shadow(2px 2px 20px gold)"})
             }
             else {
+                $('#computer').text('')
                 var computerOne = slinger4;
-                //computer.text(computerOne.name)
                 $('#computer').append(paragraph8);
                 paragraph8.addClass('badGuyStats')
                 paragraph8.empty()
@@ -223,8 +210,6 @@ $(document).ready(function(){
                 paragraph8.append('CounterAttack: ' + slinger4.counterAttackPower)
                 paragraph8.append("\n")
                 paragraph8.append('BaseHealth: ' + slinger4.baseHealth)
-                //paragraph8.attr('Id','computerBaseHealth');
-                //$('#computerBaseHealth').text('Base health: ' + computerOne.baseHealth);
                 $('#slinger4').off('click');
                 slinger4.alreadyPicked = true;
                 opponentPicked = false;
@@ -280,14 +265,13 @@ $(document).ready(function(){
                 var computerOne = slinger4;
                 var paragraphComp = paragraph8;
             }
-            
-            //playerOne.baseAttackPower = playerOne.baseAttackPower + playerOne.baseAttackPowerConst;   
+               
             computerOne.baseHealth = computerOne.baseHealth - playerOne.baseAttackPower;
             playerOne.baseHealth = playerOne.baseHealth - computerOne.counterAttackPower;
             paragraphComp.empty()
             paragraphComp.append(computerOne.name)
             paragraphComp.append("\n")
-            paragraphComp.append('AttackPower: '+ computerOne.baseAttackPower)
+            paragraphComp.append('AttackPower: '+ computerOne.counterAttackPower)
             paragraphComp.append("\n")
             paragraphComp.append('BaseHealth: ' + computerOne.baseHealth)
             paragraphMain.empty()
@@ -297,27 +281,23 @@ $(document).ready(function(){
             paragraphMain.append("\n")
             paragraphMain.append('BaseHealth: ' + playerOne.baseHealth)
             playerOne.baseAttackPower = playerOne.baseAttackPower + playerOne.baseAttackPowerConst;
-            //$('#playerattackpwr').text('Attack power: ' + playerOne.baseAttackPower);
-            //$('#playerbasehealth').text('Base health: ' + playerOne.baseHealth);
             if (computerOne.baseHealth < 0){
                 paragraphComp.empty()
-                paragraphComp.append('DEAD!')
                 paragraphMain.empty()
-                paragraphMain.append('WINNER!')
-                opponentPicked = true;
+                $('#computer').text('DEAD!')
+                computerOne.alreadyPicked = true;
+                computerOne.order = '';
             }
     
             if (playerOne.baseHealth < 0){
                 paragraphMain.empty()
-                paragraphMain.append('DEAD!')
                 paragraphComp.empty()
-                paragraphComp.append('WINNER!')
-                opponentPicked = true;
+                $('#player').text('DEAD!')
+                playerOne.alreadyPicked = true;
             }
         }
     });
     
-    
-    
+
     
     });
